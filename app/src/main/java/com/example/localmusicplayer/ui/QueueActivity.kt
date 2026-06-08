@@ -56,6 +56,13 @@ class QueueActivity : AppCompatActivity() {
         val queue = MusicPlaybackService.getInstance()?.getCurrentQueue() ?: emptyList()
         queueAdapter.submitList(queue)
         binding.textEmpty.visibility = if (queue.isEmpty()) View.VISIBLE else View.GONE
+
+        // Scroll to current track after list is loaded
+        val currentTrack = MusicPlaybackService.currentTrack.value
+        currentTrack?.let { track ->
+            queueAdapter.setCurrentTrackId(track.id)
+            scrollToCurrentTrack()
+        }
     }
 
     private fun observeCurrentTrack() {
@@ -63,8 +70,18 @@ class QueueActivity : AppCompatActivity() {
             MusicPlaybackService.currentTrack.collectLatest { track ->
                 track?.let {
                     queueAdapter.setCurrentTrackId(it.id)
+                    scrollToCurrentTrack()
                 }
             }
+        }
+    }
+
+    private fun scrollToCurrentTrack() {
+        val index = queueAdapter.getCurrentTrackIndex()
+        if (index >= 0) {
+            // Offset to show a couple of items above the current track for context
+            val layoutManager = binding.recyclerQueue.layoutManager as LinearLayoutManager
+            layoutManager.scrollToPositionWithOffset(index, 0)
         }
     }
 }
