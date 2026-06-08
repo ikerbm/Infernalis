@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory
 import android.widget.RemoteViews
 import com.example.localmusicplayer.R
 import com.example.localmusicplayer.service.MusicPlaybackService
+import com.example.localmusicplayer.ui.NowPlayingActivity
 import java.io.File
 
 /**
@@ -101,6 +102,16 @@ class MusicWidgetProvider : AppWidgetProvider() {
                     views.setInt(R.id.widgetMainContainer, "setBackgroundResource", R.drawable.bg_widget)
                 }
             }
+
+            // Setup click on widget body to open NowPlayingActivity
+            val openAppIntent = Intent(context, NowPlayingActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
+            val openAppPendingIntent = PendingIntent.getActivity(
+                context, 0, openAppIntent,
+                PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+            )
+            views.setOnClickPendingIntent(R.id.widgetMainContainer, openAppPendingIntent)
 
             // Setup button intents
             views.setOnClickPendingIntent(R.id.widgetPlayPause, getServicePendingIntent(context, MusicPlaybackService.ACTION_PLAY_PAUSE))
