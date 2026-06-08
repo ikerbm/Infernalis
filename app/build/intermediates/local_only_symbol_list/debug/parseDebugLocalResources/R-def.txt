@@ -29,9 +29,12 @@ drawable ic_repeat_one
 drawable ic_search
 drawable ic_shuffle
 drawable ic_shuffle_on
+drawable ic_timer
+drawable ic_timer_active
 id action_rescan
 id action_search
 id action_select_folder
+id action_sleep_timer
 id action_view_genres
 id buttonBack
 id buttonClear
@@ -42,6 +45,7 @@ id buttonPrevious
 id buttonQueue
 id buttonRepeat
 id buttonShuffle
+id buttonTimer
 id controlsContainer
 id editSearch
 id imageAlbumArt
@@ -69,6 +73,7 @@ id textGenreName
 id textLyrics
 id textResultCount
 id textSelectedFolder
+id textTimerRemaining
 id textTitle
 id textTotalTime
 id textTrackCount
@@ -111,6 +116,17 @@ string search
 string search_empty
 string search_hint
 string select_folder
+string sleep_timer
+string sleep_timer_cancel
+string sleep_timer_cancelled
+string sleep_timer_custom
+string sleep_timer_custom_hint
+string sleep_timer_invalid
+string sleep_timer_minutes
+string sleep_timer_remaining
+string sleep_timer_set
+string sleep_timer_started
+string sleep_timer_title
 string view_by_genre
 style Theme.LocalMusicPlayer
 xml music_widget_info

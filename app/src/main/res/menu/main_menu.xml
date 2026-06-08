@@ -25,4 +25,10 @@
         android:icon="@drawable/ic_genre"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_sleep_timer"
+        android:title="@string/sleep_timer"
+        android:icon="@drawable/ic_timer"
+        app:showAsAction="never" />
+
 </menu>

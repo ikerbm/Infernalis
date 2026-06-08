@@ -16,16 +16,16 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\item_track.xml"
     },
     {
-        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/music_widget.xml",
-        "source": "com.example.localmusicplayer.app-main-50:/layout/music_widget.xml"
-    },
-    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-mergeDebugResources-47:\\layout\\item_genre_header.xml",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\item_genre_header.xml"
     },
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-mergeDebugResources-47:\\layout\\activity_queue.xml",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_queue.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/activity_now_playing.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_now_playing.xml"
     },
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-mergeDebugResources-47:\\layout\\activity_search.xml",

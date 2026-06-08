@@ -154,6 +154,10 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(this, SearchActivity::class.java))
                     true
                 }
+                R.id.action_sleep_timer -> {
+                    SleepTimerDialog().show(supportFragmentManager, SleepTimerDialog.TAG)
+                    true
+                }
                 else -> false
             }
         }

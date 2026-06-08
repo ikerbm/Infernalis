@@ -18,4 +18,17 @@
     <string name="search">Buscar</string>
     <string name="search_hint">Buscar canciones, artistas...</string>
     <string name="search_empty">Escribe algo para buscar</string>
+
+    <!-- Sleep Timer -->
+    <string name="sleep_timer">Temporizador</string>
+    <string name="sleep_timer_title">Temporizador de sueño</string>
+    <string name="sleep_timer_minutes">%d min</string>
+    <string name="sleep_timer_custom">Personalizado</string>
+    <string name="sleep_timer_custom_hint">Minutos</string>
+    <string name="sleep_timer_set">Iniciar</string>
+    <string name="sleep_timer_cancel">Cancelar temporizador</string>
+    <string name="sleep_timer_remaining">%s restante</string>
+    <string name="sleep_timer_started">Temporizador: %d minutos</string>
+    <string name="sleep_timer_cancelled">Temporizador cancelado</string>
+    <string name="sleep_timer_invalid">Ingresa un número válido</string>
 </resources>
