@@ -1,0 +1,247 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.localmusicplayer"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- Permissions for reading audio files -->
+12    <uses-permission
+12-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:6:5-7:38
+13        android:name="android.permission.READ_EXTERNAL_STORAGE"
+13-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:6:22-77
+14        android:maxSdkVersion="32" />
+14-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:7:9-35
+15    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+15-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:8:5-75
+15-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:8:22-72
+16
+17    <!-- Permission for accessing ALL files on Android 11+ (needed for filesystem scanning) -->
+18    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+18-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:11:5-12:40
+18-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:11:22-79
+19
+20    <!-- Foreground service for audio playback -->
+21    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+21-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:15:5-77
+21-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:15:22-74
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+22-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:16:5-92
+22-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:16:22-89
+23    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+23-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:17:5-77
+23-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:17:22-74
+24    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+24-->[androidx.media3:media3-exoplayer:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\4fb20ad1a174851102c164839a2580f6\transformed\media3-exoplayer-1.2.0\AndroidManifest.xml:22:5-79
+24-->[androidx.media3:media3-exoplayer:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\4fb20ad1a174851102c164839a2580f6\transformed\media3-exoplayer-1.2.0\AndroidManifest.xml:22:22-76
+25
+26    <permission
+26-->[androidx.core:core:1.12.0] C:\Users\iker1\.gradle\caches\8.13\transforms\a0b2029eafea076824163b9d7d1746d0\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+27        android:name="com.example.localmusicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+27-->[androidx.core:core:1.12.0] C:\Users\iker1\.gradle\caches\8.13\transforms\a0b2029eafea076824163b9d7d1746d0\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+28        android:protectionLevel="signature" />
+28-->[androidx.core:core:1.12.0] C:\Users\iker1\.gradle\caches\8.13\transforms\a0b2029eafea076824163b9d7d1746d0\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+29
+30    <uses-permission android:name="com.example.localmusicplayer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+30-->[androidx.core:core:1.12.0] C:\Users\iker1\.gradle\caches\8.13\transforms\a0b2029eafea076824163b9d7d1746d0\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.12.0] C:\Users\iker1\.gradle\caches\8.13\transforms\a0b2029eafea076824163b9d7d1746d0\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+31
+32    <application
+32-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:19:5-84:19
+33        android:name="com.example.localmusicplayer.MusicPlayerApplication"
+33-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:20:9-47
+34        android:allowBackup="true"
+34-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:21:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.12.0] C:\Users\iker1\.gradle\caches\8.13\transforms\a0b2029eafea076824163b9d7d1746d0\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+36        android:debuggable="true"
+37        android:extractNativeLibs="false"
+38        android:icon="@mipmap/ic_launcher"
+38-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:22:9-43
+39        android:label="@string/app_name"
+39-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:23:9-41
+40        android:requestLegacyExternalStorage="true"
+40-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:27:9-52
+41        android:roundIcon="@mipmap/ic_launcher_round"
+41-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:24:9-54
+42        android:supportsRtl="true"
+42-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:25:9-35
+43        android:testOnly="true"
+44        android:theme="@style/Theme.LocalMusicPlayer" >
+44-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:26:9-54
+45        <activity
+45-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:30:9-38:20
+46            android:name="com.example.localmusicplayer.ui.MainActivity"
+46-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:31:13-44
+47            android:exported="true"
+47-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:32:13-36
+48            android:launchMode="singleTop" >
+48-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:33:13-43
+49            <intent-filter>
+49-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:34:13-37:29
+50                <action android:name="android.intent.action.MAIN" />
+50-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:35:17-69
+50-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:35:25-66
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:36:17-77
+52-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:36:27-74
+53            </intent-filter>
+54        </activity>
+55        <activity
+55-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:40:9-43:61
+56            android:name="com.example.localmusicplayer.ui.NowPlayingActivity"
+56-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:41:13-50
+57            android:exported="false"
+57-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:42:13-37
+58            android:parentActivityName="com.example.localmusicplayer.ui.MainActivity" />
+58-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:43:13-58
+59        <activity
+59-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:45:9-48:67
+60            android:name="com.example.localmusicplayer.ui.QueueActivity"
+60-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:46:13-45
+61            android:exported="false"
+61-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:47:13-37
+62            android:parentActivityName="com.example.localmusicplayer.ui.NowPlayingActivity" />
+62-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:48:13-64
+63        <activity
+63-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:50:9-53:61
+64            android:name="com.example.localmusicplayer.ui.GenreActivity"
+64-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:51:13-45
+65            android:exported="false"
+65-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:52:13-37
+66            android:parentActivityName="com.example.localmusicplayer.ui.MainActivity" />
+66-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:53:13-58
+67        <activity
+67-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:55:9-59:58
+68            android:name="com.example.localmusicplayer.ui.SearchActivity"
+68-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:56:13-46
+69            android:exported="false"
+69-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:57:13-37
+70            android:parentActivityName="com.example.localmusicplayer.ui.MainActivity"
+70-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:58:13-58
+71            android:windowSoftInputMode="stateVisible" />
+71-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:59:13-55
+72
+73        <!-- Music Widget -->
+74        <receiver
+74-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:62:9-72:20
+75            android:name="com.example.localmusicplayer.widget.MusicWidgetProvider"
+75-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:63:13-55
+76            android:exported="false" >
+76-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:64:13-37
+77            <intent-filter>
+77-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:65:13-68:29
+78                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+78-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:66:17-84
+78-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:66:25-81
+79                <action android:name="com.example.localmusicplayer.ACTION_WIDGET_UPDATE" />
+79-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:67:17-92
+79-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:67:25-89
+80            </intent-filter>
+81
+82            <meta-data
+82-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:69:13-71:61
+83                android:name="android.appwidget.provider"
+83-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:70:17-58
+84                android:resource="@xml/music_widget_info" />
+84-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:71:17-58
+85        </receiver>
+86
+87        <!-- Music Playback Service -->
+88        <service
+88-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:75:9-82:19
+89            android:name="com.example.localmusicplayer.service.MusicPlaybackService"
+89-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:76:13-57
+90            android:exported="false"
+90-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:77:13-37
+91            android:foregroundServiceType="mediaPlayback" >
+91-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:78:13-58
+92            <intent-filter>
+92-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:79:13-81:29
+93                <action android:name="androidx.media3.session.MediaSessionService" />
+93-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:80:17-86
+93-->C:\Users\iker1\OneDrive\Escritorio\Infernalis\app\src\main\AndroidManifest.xml:80:25-83
+94            </intent-filter>
+95        </service>
+96
+97        <provider
+97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\8d1c0a2d9854bb7a792b5b53ea144b1b\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+98            android:name="androidx.startup.InitializationProvider"
+98-->[androidx.emoji2:emoji2:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\8d1c0a2d9854bb7a792b5b53ea144b1b\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+99            android:authorities="com.example.localmusicplayer.androidx-startup"
+99-->[androidx.emoji2:emoji2:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\8d1c0a2d9854bb7a792b5b53ea144b1b\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+100            android:exported="false" >
+100-->[androidx.emoji2:emoji2:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\8d1c0a2d9854bb7a792b5b53ea144b1b\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+101            <meta-data
+101-->[androidx.emoji2:emoji2:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\8d1c0a2d9854bb7a792b5b53ea144b1b\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+102-->[androidx.emoji2:emoji2:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\8d1c0a2d9854bb7a792b5b53ea144b1b\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+103                android:value="androidx.startup" />
+103-->[androidx.emoji2:emoji2:1.2.0] C:\Users\iker1\.gradle\caches\8.13\transforms\8d1c0a2d9854bb7a792b5b53ea144b1b\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+104            <meta-data
+104-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\iker1\.gradle\caches\8.13\transforms\435dcc3111cc92b9fa04518671470136\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+105                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+105-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\iker1\.gradle\caches\8.13\transforms\435dcc3111cc92b9fa04518671470136\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+106                android:value="androidx.startup" />
+106-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\iker1\.gradle\caches\8.13\transforms\435dcc3111cc92b9fa04518671470136\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+107            <meta-data
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+108                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+109                android:value="androidx.startup" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+110        </provider>
+111
+112        <service
+112-->[androidx.room:room-runtime:2.6.1] C:\Users\iker1\.gradle\caches\8.13\transforms\23eb811f7dd6784a45747cb7a0476fa6\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+113            android:name="androidx.room.MultiInstanceInvalidationService"
+113-->[androidx.room:room-runtime:2.6.1] C:\Users\iker1\.gradle\caches\8.13\transforms\23eb811f7dd6784a45747cb7a0476fa6\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+114            android:directBootAware="true"
+114-->[androidx.room:room-runtime:2.6.1] C:\Users\iker1\.gradle\caches\8.13\transforms\23eb811f7dd6784a45747cb7a0476fa6\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+115            android:exported="false" />
+115-->[androidx.room:room-runtime:2.6.1] C:\Users\iker1\.gradle\caches\8.13\transforms\23eb811f7dd6784a45747cb7a0476fa6\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+116
+117        <receiver
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+118            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+119            android:directBootAware="false"
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+120            android:enabled="true"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+121            android:exported="true"
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+122            android:permission="android.permission.DUMP" >
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+124                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+127                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+128            </intent-filter>
+129            <intent-filter>
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+130                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+131            </intent-filter>
+132            <intent-filter>
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+133                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\iker1\.gradle\caches\8.13\transforms\cc955ce29bde416186debf401dc55238\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+134            </intent-filter>
+135        </receiver>
+136    </application>
+137
+138</manifest>

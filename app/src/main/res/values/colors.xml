@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary colors - Rojo Vino -->
+    <color name="primary">#722F37</color>
+    <color name="primary_dark">#4A1C23</color>
+    <color name="primary_light">#9B4D55</color>
+
+    <!-- Accent - Dorado cálido -->
+    <color name="accent">#C9A227</color>
+
+    <!-- Background colors -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="surface_elevated">#2D2D2D</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="text_disabled">#666666</color>
+
+    <!-- Other -->
+    <color name="divider">#2D2D2D</color>
+    <color name="ripple">#33FFFFFF</color>
+    <color name="error">#CF6679</color>
+</resources>

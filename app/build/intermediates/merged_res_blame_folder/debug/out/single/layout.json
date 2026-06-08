@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/item_track.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/item_track.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_main.xml"
+    }
+]

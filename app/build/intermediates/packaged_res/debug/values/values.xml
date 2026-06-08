@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#03DAC5</color>
+    <color name="background">#121212</color>
+    <color name="divider">#2D2D2D</color>
+    <color name="error">#CF6679</color>
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_light">#BB86FC</color>
+    <color name="ripple">#33FFFFFF</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="surface_elevated">#2D2D2D</color>
+    <color name="text_disabled">#666666</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <string name="album_art">Portada del álbum</string>
+    <string name="app_name">Local Music Player</string>
+    <string name="folder_selected">Carpeta: %s</string>
+    <string name="loading">Cargando...</string>
+    <string name="next">Siguiente</string>
+    <string name="no_folder_selected">No hay carpeta seleccionada</string>
+    <string name="no_tracks_found">No se encontraron canciones</string>
+    <string name="permission_required">Se requiere permiso para acceder a tu música</string>
+    <string name="play_pause">Reproducir / Pausar</string>
+    <string name="previous">Anterior</string>
+    <string name="rescan">Reescanear</string>
+    <string name="select_folder">Seleccionar carpeta</string>
+    <style name="Theme.LocalMusicPlayer" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+    </style>
+</resources>

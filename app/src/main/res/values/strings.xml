@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Infernalis MP</string>
+    <string name="no_tracks_found">No se encontraron canciones</string>
+    <string name="play_pause">Reproducir / Pausar</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="album_art">Portada del álbum</string>
+    <string name="loading">Cargando...</string>
+    <string name="permission_required">Se requiere permiso para acceder a tu música</string>
+    <string name="select_folder">Seleccionar carpeta</string>
+    <string name="rescan">Reescanear</string>
+    <string name="no_folder_selected">No hay carpeta seleccionada</string>
+    <string name="folder_selected">Carpeta: %s</string>
+    <string name="genres_title">Géneros</string>
+    <string name="view_by_genre">Ver por género</string>
+    <string name="no_genres_found">No se encontraron géneros</string>
+    <string name="search">Buscar</string>
+    <string name="search_hint">Buscar canciones, artistas...</string>
+    <string name="search_empty">Escribe algo para buscar</string>
+</resources>

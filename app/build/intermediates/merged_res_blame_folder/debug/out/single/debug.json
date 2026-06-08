@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/drawable_ic_music_note.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/drawable/ic_music_note.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/drawable_ic_music_placeholder.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/drawable/ic_music_placeholder.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/layout_activity_main.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/layout_item_track.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/item_track.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/drawable_bg_circle_primary.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/drawable/bg_circle_primary.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/drawable_bg_rounded_gray.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/drawable/bg_rounded_gray.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-merged_res-48:/drawable_ic_folder.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/drawable/ic_folder.xml"
+    }
+]

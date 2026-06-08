@@ -1,0 +1,6 @@
+com.example.localmusicplayer.test.app-core-1.5.0-0 C:\Users\iker1\.gradle\caches\transforms-3\2899bde4ce5c4d33759b5d7ff1a0785a\transformed\core-1.5.0\res
+com.example.localmusicplayer.test.app-annotation-experimental-1.3.1-1 C:\Users\iker1\.gradle\caches\transforms-3\663a56a4db9c4bf3d7c9c2aa85fc9fc9\transformed\annotation-experimental-1.3.1\res
+com.example.localmusicplayer.test.app-androidTest-2 C:\Users\iker1\OneDrive\Escritorio\Reproductor\app\build\generated\res\resValues\androidTest\debug
+com.example.localmusicplayer.test.app-mergeDebugAndroidTestResources-3 C:\Users\iker1\OneDrive\Escritorio\Reproductor\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.localmusicplayer.test.app-mergeDebugAndroidTestResources-4 C:\Users\iker1\OneDrive\Escritorio\Reproductor\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.localmusicplayer.test.app-merged_res-5 C:\Users\iker1\OneDrive\Escritorio\Reproductor\app\build\intermediates\merged_res\debugAndroidTest
