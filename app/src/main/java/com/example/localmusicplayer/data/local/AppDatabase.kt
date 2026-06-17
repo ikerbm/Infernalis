@@ -10,13 +10,14 @@ import androidx.room.RoomDatabase
  * Singleton pattern ensures single instance
  */
 @Database(
-    entities = [TrackEntity::class],
-    version = 4,
+    entities = [TrackEntity::class, PlaylistEntity::class, PlaylistTrackCrossRef::class],
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun trackDao(): TrackDao
+    abstract fun playlistDao(): PlaylistDao
 
     companion object {
         @Volatile

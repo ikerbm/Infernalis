@@ -8,6 +8,10 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_genre.xml"
     },
     {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/dialog_add_to_playlist.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/dialog_add_to_playlist.xml"
+    },
+    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-mergeDebugResources-47:\\layout\\activity_main.xml",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_main.xml"
     },
@@ -16,16 +20,28 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\item_track.xml"
     },
     {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/activity_playlists.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_playlists.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/activity_playlist_detail.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_playlist_detail.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/item_playlist.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/item_playlist.xml"
+    },
+    {
+        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/item_track.xml",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/item_track.xml"
+    },
+    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-mergeDebugResources-47:\\layout\\item_genre_header.xml",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\item_genre_header.xml"
     },
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-mergeDebugResources-47:\\layout\\activity_queue.xml",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_queue.xml"
-    },
-    {
-        "merged": "com.example.localmusicplayer.app-mergeDebugResources-47:/layout/activity_now_playing.xml",
-        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_now_playing.xml"
     },
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-mergeDebugResources-47:\\layout\\activity_search.xml",

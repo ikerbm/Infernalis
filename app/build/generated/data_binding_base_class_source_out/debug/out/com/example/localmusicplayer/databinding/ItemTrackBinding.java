@@ -4,6 +4,7 @@ package com.example.localmusicplayer.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,6 +22,9 @@ public final class ItemTrackBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageButton buttonMore;
+
+  @NonNull
   public final ImageView imageTrack;
 
   @NonNull
@@ -32,9 +36,11 @@ public final class ItemTrackBinding implements ViewBinding {
   @NonNull
   public final TextView textTitle;
 
-  private ItemTrackBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageTrack,
-      @NonNull TextView textArtist, @NonNull TextView textDuration, @NonNull TextView textTitle) {
+  private ItemTrackBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton buttonMore,
+      @NonNull ImageView imageTrack, @NonNull TextView textArtist, @NonNull TextView textDuration,
+      @NonNull TextView textTitle) {
     this.rootView = rootView;
+    this.buttonMore = buttonMore;
     this.imageTrack = imageTrack;
     this.textArtist = textArtist;
     this.textDuration = textDuration;
@@ -68,6 +74,12 @@ public final class ItemTrackBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonMore;
+      ImageButton buttonMore = ViewBindings.findChildViewById(rootView, id);
+      if (buttonMore == null) {
+        break missingId;
+      }
+
       id = R.id.imageTrack;
       ImageView imageTrack = ViewBindings.findChildViewById(rootView, id);
       if (imageTrack == null) {
@@ -92,8 +104,8 @@ public final class ItemTrackBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemTrackBinding((ConstraintLayout) rootView, imageTrack, textArtist, textDuration,
-          textTitle);
+      return new ItemTrackBinding((ConstraintLayout) rootView, buttonMore, imageTrack, textArtist,
+          textDuration, textTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -26,6 +26,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_view_playlists"
+        android:title="@string/view_playlists"
+        android:icon="@drawable/ic_playlist"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_sleep_timer"
         android:title="@string/sleep_timer"
         android:icon="@drawable/ic_timer"

@@ -68,6 +68,14 @@
             android:exported="false"
             android:parentActivityName="com.example.localmusicplayer.ui.MainActivity"
             android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name="com.example.localmusicplayer.ui.PlaylistsActivity"
+            android:exported="false"
+            android:parentActivityName="com.example.localmusicplayer.ui.MainActivity" />
+        <activity
+            android:name="com.example.localmusicplayer.ui.PlaylistDetailActivity"
+            android:exported="false"
+            android:parentActivityName="com.example.localmusicplayer.ui.PlaylistsActivity" />
 
         <!-- Music Widget -->
         <receiver

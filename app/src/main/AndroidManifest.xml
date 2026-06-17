@@ -58,6 +58,16 @@
             android:parentActivityName=".ui.MainActivity"
             android:windowSoftInputMode="stateVisible" />
 
+        <activity
+            android:name=".ui.PlaylistsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.PlaylistDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.PlaylistsActivity" />
+
         <!-- Music Widget -->
         <receiver
             android:name=".widget.MusicWidgetProvider"

@@ -17,7 +17,8 @@ import java.io.File
  * Supports expandable genre headers with track items inside.
  */
 class GenreAdapter(
-    private val onTrackClick: (Track, List<Track>) -> Unit
+    private val onTrackClick: (Track, List<Track>) -> Unit,
+    private val onMoreClick: ((Track, View) -> Unit)? = null
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -159,6 +160,14 @@ class GenreAdapter(
             binding.textTitle.setTextColor(
                 binding.root.context.getColor(R.color.text_primary)
             )
+            binding.buttonMore.visibility = if (onMoreClick != null) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+            binding.buttonMore.setOnClickListener { view ->
+                onMoreClick?.invoke(track, view)
+            }
 
             // Load album art using Coil
             val albumArtFile = track.albumArtPath?.let { File(it) }

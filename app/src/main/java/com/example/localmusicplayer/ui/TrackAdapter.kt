@@ -18,7 +18,8 @@ import java.io.File
  * Uses Coil for efficient image loading with caching
  */
 class TrackAdapter(
-    private val onTrackClick: (Track) -> Unit
+    private val onTrackClick: (Track) -> Unit,
+    private val onMoreClick: ((Track, android.view.View) -> Unit)? = null
 ) : ListAdapter<Track, TrackAdapter.TrackViewHolder>(TrackDiffCallback()) {
 
     private var currentTrackId: Long? = null
@@ -64,6 +65,13 @@ class TrackAdapter(
                     onTrackClick(getItem(position))
                 }
             }
+
+            binding.buttonMore.setOnClickListener { view ->
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onMoreClick?.invoke(getItem(position), view)
+                }
+            }
         }
 
         fun bind(track: Track) {
@@ -72,6 +80,13 @@ class TrackAdapter(
                 textTitle.text = track.title
                 textArtist.text = track.artist
                 textDuration.text = track.getFormattedDuration()
+
+                // Show/hide more button based on callback availability
+                buttonMore.visibility = if (onMoreClick != null) {
+                    android.view.View.VISIBLE
+                } else {
+                    android.view.View.GONE
+                }
 
                 // Determine if this track has already been played
                 val isCurrentTrack = track.id == currentTrackId
@@ -129,4 +144,3 @@ class TrackAdapter(
         }
     }
 }
-
