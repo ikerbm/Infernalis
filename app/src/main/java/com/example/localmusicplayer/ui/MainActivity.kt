@@ -1,5 +1,6 @@
 package com.example.localmusicplayer.ui
 
+import android.widget.PopupMenu
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -150,8 +151,16 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(this, GenreActivity::class.java))
                     true
                 }
+                R.id.action_view_playlists -> {
+                    startActivity(Intent(this, PlaylistsActivity::class.java))
+                    true
+                }
                 R.id.action_search -> {
                     startActivity(Intent(this, SearchActivity::class.java))
+                    true
+                }
+                R.id.action_sleep_timer -> {
+                    SleepTimerDialog().show(supportFragmentManager, SleepTimerDialog.TAG)
                     true
                 }
                 else -> false
@@ -198,17 +207,38 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        trackAdapter = TrackAdapter { track ->
-            viewModel.playTrack(track)
-            // Launch Now Playing Activity
-            startActivity(Intent(this, NowPlayingActivity::class.java))
-        }
+        trackAdapter = TrackAdapter(
+            onTrackClick = { track ->
+                viewModel.playTrack(track)
+                // Launch Now Playing Activity
+                startActivity(Intent(this, NowPlayingActivity::class.java))
+            },
+            onMoreClick = { track, anchorView ->
+                showTrackPopupMenu(track, anchorView)
+            }
+        )
 
         binding.recyclerTracks.apply {
             adapter = trackAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
             setHasFixedSize(true)
         }
+    }
+
+    private fun showTrackPopupMenu(track: com.example.localmusicplayer.data.model.Track, anchorView: android.view.View) {
+        val popup = PopupMenu(this, anchorView)
+        popup.menuInflater.inflate(R.menu.menu_track_options, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_add_to_playlist -> {
+                    AddToPlaylistDialog.newInstance(track.path, track.title)
+                        .show(supportFragmentManager, AddToPlaylistDialog.TAG)
+                    true
+                }
+                else -> false
+            }
+        }
+        popup.show()
     }
 
     private fun observeViewModel() {

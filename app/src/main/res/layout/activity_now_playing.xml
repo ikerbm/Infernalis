@@ -34,6 +34,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Timer button -->
+    <ImageButton
+        android:id="@+id/buttonTimer"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Timer"
+        android:src="@drawable/ic_timer"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@id/buttonQueue"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Timer Remaining Text -->
+    <TextView
+        android:id="@+id/textTimerRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/accent"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/buttonTimer"
+        app:layout_constraintStart_toStartOf="@id/buttonTimer"
+        app:layout_constraintEnd_toEndOf="@id/buttonTimer"
+        tools:text="15:00" />
+
     <!-- ============================================ -->
     <!-- BOTTOM-PINNED CONTROLS (never move)          -->
     <!-- ============================================ -->

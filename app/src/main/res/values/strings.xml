@@ -18,4 +18,45 @@
     <string name="search">Buscar</string>
     <string name="search_hint">Buscar canciones, artistas...</string>
     <string name="search_empty">Escribe algo para buscar</string>
+
+    <!-- Sleep Timer -->
+    <string name="sleep_timer">Temporizador</string>
+    <string name="sleep_timer_title">Temporizador de sueño</string>
+    <string name="sleep_timer_minutes">%d min</string>
+    <string name="sleep_timer_custom">Personalizado</string>
+    <string name="sleep_timer_custom_hint">Minutos</string>
+    <string name="sleep_timer_set">Iniciar</string>
+    <string name="sleep_timer_cancel">Cancelar temporizador</string>
+    <string name="sleep_timer_remaining">%s restante</string>
+    <string name="sleep_timer_started">Temporizador: %d minutos</string>
+    <string name="sleep_timer_cancelled">Temporizador cancelado</string>
+    <string name="sleep_timer_invalid">Ingresa un número válido</string>
+
+    <!-- Playlists -->
+    <string name="playlists_title">Listas de reproducción</string>
+    <string name="view_playlists">Listas de reproducción</string>
+    <string name="recent_tracks">Recientes</string>
+    <string name="recent_tracks_description">Últimas 200 canciones agregadas</string>
+    <string name="create_playlist">Nueva lista</string>
+    <string name="create_playlist_title">Crear lista de reproducción</string>
+    <string name="playlist_name_hint">Nombre de la lista</string>
+    <string name="add_to_playlist">Agregar a lista</string>
+    <string name="add_to_playlist_title">Agregar a lista de reproducción</string>
+    <string name="track_added_to_playlist">Canción agregada a \"%s\"</string>
+    <string name="track_already_in_playlist">La canción ya está en \"%s\"</string>
+    <string name="playlist_created">Lista \"%s\" creada</string>
+    <string name="playlist_deleted">Lista eliminada</string>
+    <string name="playlist_renamed">Lista renombrada</string>
+    <string name="rename_playlist">Renombrar</string>
+    <string name="delete_playlist">Eliminar</string>
+    <string name="delete_playlist_confirm">¿Eliminar la lista \"%s\"?</string>
+    <string name="rename_playlist_title">Renombrar lista</string>
+    <string name="no_playlists">No hay listas de reproducción</string>
+    <string name="no_tracks_in_playlist">No hay canciones en esta lista</string>
+    <string name="tracks_count">%d canciones</string>
+    <string name="cancel">Cancelar</string>
+    <string name="create">Crear</string>
+    <string name="rename">Renombrar</string>
+    <string name="delete">Eliminar</string>
+    <string name="save">Guardar</string>
 </resources>

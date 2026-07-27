@@ -10,6 +10,7 @@ import com.example.localmusicplayer.R
 import com.example.localmusicplayer.data.model.PlaybackState
 import com.example.localmusicplayer.databinding.ActivityNowPlayingBinding
 import com.example.localmusicplayer.service.MusicPlaybackService
+import com.example.localmusicplayer.service.SleepTimerManager
 import androidx.media3.common.Player
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -40,6 +41,10 @@ class NowPlayingActivity : AppCompatActivity() {
 
             buttonQueue.setOnClickListener {
                 startActivity(Intent(this@NowPlayingActivity, QueueActivity::class.java))
+            }
+
+            buttonTimer.setOnClickListener {
+                SleepTimerDialog().show(supportFragmentManager, SleepTimerDialog.TAG)
             }
 
             buttonPlayPause.setOnClickListener {
@@ -154,6 +159,24 @@ class NowPlayingActivity : AppCompatActivity() {
                         else -> R.drawable.ic_repeat
                     }
                 )
+            }
+        }
+
+        lifecycleScope.launch {
+            SleepTimerManager.isActive.collectLatest { isActive ->
+                binding.buttonTimer.setImageResource(
+                    if (isActive) R.drawable.ic_timer_active
+                    else R.drawable.ic_timer
+                )
+                binding.textTimerRemaining.visibility = if (isActive) android.view.View.VISIBLE else android.view.View.GONE
+            }
+        }
+
+        lifecycleScope.launch {
+            SleepTimerManager.remainingMillis.collectLatest { millis ->
+                if (SleepTimerManager.isActive.value) {
+                    binding.textTimerRemaining.text = SleepTimerManager.getRemainingFormatted()
+                }
             }
         }
     }

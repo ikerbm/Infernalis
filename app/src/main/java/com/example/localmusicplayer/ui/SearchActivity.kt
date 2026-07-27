@@ -2,6 +2,8 @@ package com.example.localmusicplayer.ui
 
 import android.content.Context
 import android.content.Intent
+import android.widget.PopupMenu
+import com.example.localmusicplayer.R
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -59,16 +61,21 @@ class SearchActivity : AppCompatActivity() {
             binding.editSearch.text.clear()
         }
 
-        trackAdapter = TrackAdapter { track ->
-            // Play the selected track within search results
-            val index = allSearchResults.indexOf(track)
-            if (index >= 0) {
-                MusicPlaybackService.getInstance()?.setPlaylist(allSearchResults, index)
-            } else {
-                MusicPlaybackService.getInstance()?.playTrack(track)
+        trackAdapter = TrackAdapter(
+            onTrackClick = { track ->
+                // Play the selected track within search results
+                val index = allSearchResults.indexOf(track)
+                if (index >= 0) {
+                    MusicPlaybackService.getInstance()?.setPlaylist(allSearchResults, index)
+                } else {
+                    MusicPlaybackService.getInstance()?.playTrack(track)
+                }
+                startActivity(Intent(this, NowPlayingActivity::class.java))
+            },
+            onMoreClick = { track, anchorView ->
+                showTrackPopupMenu(track, anchorView)
             }
-            startActivity(Intent(this, NowPlayingActivity::class.java))
-        }
+        )
 
         binding.recyclerResults.apply {
             adapter = trackAdapter
@@ -131,5 +138,21 @@ class SearchActivity : AppCompatActivity() {
                 // Query cancelled or error
             }
         }
+    }
+
+    private fun showTrackPopupMenu(track: Track, anchorView: View) {
+        val popup = PopupMenu(this, anchorView)
+        popup.menuInflater.inflate(R.menu.menu_track_options, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_add_to_playlist -> {
+                    AddToPlaylistDialog.newInstance(track.path, track.title)
+                        .show(supportFragmentManager, AddToPlaylistDialog.TAG)
+                    true
+                }
+                else -> false
+            }
+        }
+        popup.show()
     }
 }

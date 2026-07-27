@@ -4,7 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.PopupMenu
 import android.widget.Toast
+import com.example.localmusicplayer.R
+import com.example.localmusicplayer.data.model.Track
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,17 +48,22 @@ class GenreActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        genreAdapter = GenreAdapter { track, genreTracks ->
-            // Play the selected track within its genre playlist
-            val index = genreTracks.indexOf(track)
-            if (index >= 0) {
-                MusicPlaybackService.getInstance()?.setPlaylist(genreTracks, index)
-            } else {
-                MusicPlaybackService.getInstance()?.playTrack(track)
+        genreAdapter = GenreAdapter(
+            onTrackClick = { track, genreTracks ->
+                // Play the selected track within its genre playlist
+                val index = genreTracks.indexOf(track)
+                if (index >= 0) {
+                    MusicPlaybackService.getInstance()?.setPlaylist(genreTracks, index)
+                } else {
+                    MusicPlaybackService.getInstance()?.playTrack(track)
+                }
+                // Open Now Playing
+                startActivity(Intent(this, NowPlayingActivity::class.java))
+            },
+            onMoreClick = { track, anchorView ->
+                showTrackPopupMenu(track, anchorView)
             }
-            // Open Now Playing
-            startActivity(Intent(this, NowPlayingActivity::class.java))
-        }
+        )
 
         binding.recyclerGenres.apply {
             adapter = genreAdapter
@@ -106,5 +114,21 @@ class GenreActivity : AppCompatActivity() {
                 ).show()
             }
         }
+    }
+
+    private fun showTrackPopupMenu(track: Track, anchorView: View) {
+        val popup = PopupMenu(this, anchorView)
+        popup.menuInflater.inflate(R.menu.menu_track_options, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_add_to_playlist -> {
+                    AddToPlaylistDialog.newInstance(track.path, track.title)
+                        .show(supportFragmentManager, AddToPlaylistDialog.TAG)
+                    true
+                }
+                else -> false
+            }
+        }
+        popup.show()
     }
 }

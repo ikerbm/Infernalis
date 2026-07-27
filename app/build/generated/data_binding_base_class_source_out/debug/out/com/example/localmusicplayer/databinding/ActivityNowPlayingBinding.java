@@ -46,6 +46,9 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
   public final ImageButton buttonShuffle;
 
   @NonNull
+  public final ImageButton buttonTimer;
+
+  @NonNull
   public final LinearLayout controlsContainer;
 
   @NonNull
@@ -70,6 +73,9 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
   public final TextView textLyrics;
 
   @NonNull
+  public final TextView textTimerRemaining;
+
+  @NonNull
   public final TextView textTitle;
 
   @NonNull
@@ -79,10 +85,12 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
       @NonNull ImageButton buttonBack, @NonNull ImageButton buttonNext,
       @NonNull ImageButton buttonPlayPause, @NonNull ImageButton buttonPrevious,
       @NonNull ImageButton buttonQueue, @NonNull ImageButton buttonRepeat,
-      @NonNull ImageButton buttonShuffle, @NonNull LinearLayout controlsContainer,
-      @NonNull ImageView imageAlbumArt, @NonNull ScrollView scrollLyrics, @NonNull SeekBar seekBar,
+      @NonNull ImageButton buttonShuffle, @NonNull ImageButton buttonTimer,
+      @NonNull LinearLayout controlsContainer, @NonNull ImageView imageAlbumArt,
+      @NonNull ScrollView scrollLyrics, @NonNull SeekBar seekBar,
       @NonNull LinearLayout seekBarContainer, @NonNull TextView textArtist,
-      @NonNull TextView textCurrentTime, @NonNull TextView textLyrics, @NonNull TextView textTitle,
+      @NonNull TextView textCurrentTime, @NonNull TextView textLyrics,
+      @NonNull TextView textTimerRemaining, @NonNull TextView textTitle,
       @NonNull TextView textTotalTime) {
     this.rootView = rootView;
     this.buttonBack = buttonBack;
@@ -92,6 +100,7 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
     this.buttonQueue = buttonQueue;
     this.buttonRepeat = buttonRepeat;
     this.buttonShuffle = buttonShuffle;
+    this.buttonTimer = buttonTimer;
     this.controlsContainer = controlsContainer;
     this.imageAlbumArt = imageAlbumArt;
     this.scrollLyrics = scrollLyrics;
@@ -100,6 +109,7 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
     this.textArtist = textArtist;
     this.textCurrentTime = textCurrentTime;
     this.textLyrics = textLyrics;
+    this.textTimerRemaining = textTimerRemaining;
     this.textTitle = textTitle;
     this.textTotalTime = textTotalTime;
   }
@@ -173,6 +183,12 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.buttonTimer;
+      ImageButton buttonTimer = ViewBindings.findChildViewById(rootView, id);
+      if (buttonTimer == null) {
+        break missingId;
+      }
+
       id = R.id.controlsContainer;
       LinearLayout controlsContainer = ViewBindings.findChildViewById(rootView, id);
       if (controlsContainer == null) {
@@ -221,6 +237,12 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textTimerRemaining;
+      TextView textTimerRemaining = ViewBindings.findChildViewById(rootView, id);
+      if (textTimerRemaining == null) {
+        break missingId;
+      }
+
       id = R.id.textTitle;
       TextView textTitle = ViewBindings.findChildViewById(rootView, id);
       if (textTitle == null) {
@@ -234,9 +256,9 @@ public final class ActivityNowPlayingBinding implements ViewBinding {
       }
 
       return new ActivityNowPlayingBinding((ConstraintLayout) rootView, buttonBack, buttonNext,
-          buttonPlayPause, buttonPrevious, buttonQueue, buttonRepeat, buttonShuffle,
+          buttonPlayPause, buttonPrevious, buttonQueue, buttonRepeat, buttonShuffle, buttonTimer,
           controlsContainer, imageAlbumArt, scrollLyrics, seekBar, seekBarContainer, textArtist,
-          textCurrentTime, textLyrics, textTitle, textTotalTime);
+          textCurrentTime, textLyrics, textTimerRemaining, textTitle, textTotalTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

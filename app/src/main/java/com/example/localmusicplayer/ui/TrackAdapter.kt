@@ -18,21 +18,28 @@ import java.io.File
  * Uses Coil for efficient image loading with caching
  */
 class TrackAdapter(
-    private val onTrackClick: (Track) -> Unit
+    private val onTrackClick: (Track) -> Unit,
+    private val onMoreClick: ((Track, android.view.View) -> Unit)? = null
 ) : ListAdapter<Track, TrackAdapter.TrackViewHolder>(TrackDiffCallback()) {
 
     private var currentTrackId: Long? = null
+    private var currentTrackIndex: Int = -1
 
     fun setCurrentTrackId(id: Long) {
         val oldId = currentTrackId
+        val oldIndex = currentTrackIndex
         currentTrackId = id
-        // Refresh items that changed
-        currentList.forEachIndexed { index, track ->
-            if (track.id == oldId || track.id == id) {
-                notifyItemChanged(index)
-            }
+        // Find the new current track index
+        currentTrackIndex = currentList.indexOfFirst { it.id == id }
+        // Refresh all items between old and new positions, plus the endpoints
+        val minIndex = minOf(oldIndex, currentTrackIndex).coerceAtLeast(0)
+        val maxIndex = maxOf(oldIndex, currentTrackIndex).coerceAtMost(currentList.size - 1)
+        if (minIndex <= maxIndex) {
+            notifyItemRangeChanged(minIndex, maxIndex - minIndex + 1)
         }
     }
+
+    fun getCurrentTrackIndex(): Int = currentTrackIndex
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackViewHolder {
         val binding = ItemTrackBinding.inflate(
@@ -58,20 +65,53 @@ class TrackAdapter(
                     onTrackClick(getItem(position))
                 }
             }
+
+            binding.buttonMore.setOnClickListener { view ->
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onMoreClick?.invoke(getItem(position), view)
+                }
+            }
         }
 
         fun bind(track: Track) {
+            val position = bindingAdapterPosition
             binding.apply {
                 textTitle.text = track.title
                 textArtist.text = track.artist
                 textDuration.text = track.getFormattedDuration()
 
-                // Highlight current track
-                val isCurrentTrack = track.id == currentTrackId
-                if (isCurrentTrack) {
-                    textTitle.setTextColor(root.context.getColor(R.color.accent))
+                // Show/hide more button based on callback availability
+                buttonMore.visibility = if (onMoreClick != null) {
+                    android.view.View.VISIBLE
                 } else {
-                    textTitle.setTextColor(root.context.getColor(R.color.text_primary))
+                    android.view.View.GONE
+                }
+
+                // Determine if this track has already been played
+                val isCurrentTrack = track.id == currentTrackId
+                val isPlayedTrack = currentTrackIndex >= 0 && position < currentTrackIndex
+
+                // Highlight current track, dim played tracks
+                when {
+                    isCurrentTrack -> {
+                        textTitle.setTextColor(root.context.getColor(R.color.accent))
+                        textArtist.alpha = 1.0f
+                        textDuration.alpha = 1.0f
+                        imageTrack.alpha = 1.0f
+                    }
+                    isPlayedTrack -> {
+                        textTitle.setTextColor(root.context.getColor(R.color.text_disabled))
+                        textArtist.alpha = 0.45f
+                        textDuration.alpha = 0.45f
+                        imageTrack.alpha = 0.45f
+                    }
+                    else -> {
+                        textTitle.setTextColor(root.context.getColor(R.color.text_primary))
+                        textArtist.alpha = 1.0f
+                        textDuration.alpha = 1.0f
+                        imageTrack.alpha = 1.0f
+                    }
                 }
                 
                 // Load album art using Coil
@@ -104,4 +144,3 @@ class TrackAdapter(
         }
     }
 }
-
