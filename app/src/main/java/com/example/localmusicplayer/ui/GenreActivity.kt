@@ -62,6 +62,9 @@ class GenreActivity : AppCompatActivity() {
             },
             onMoreClick = { track, anchorView ->
                 showTrackPopupMenu(track, anchorView)
+            },
+            onGenreMoreClick = { genre, tracks, anchorView ->
+                showGenrePopupMenu(genre, tracks, anchorView)
             }
         )
 
@@ -124,6 +127,42 @@ class GenreActivity : AppCompatActivity() {
                 R.id.action_add_to_playlist -> {
                     AddToPlaylistDialog.newInstance(track.path, track.title)
                         .show(supportFragmentManager, AddToPlaylistDialog.TAG)
+                    true
+                }
+                else -> false
+            }
+        }
+        popup.show()
+    }
+
+    private fun showGenrePopupMenu(genre: String, tracks: List<Track>, anchorView: View) {
+        val popup = PopupMenu(this, anchorView)
+        popup.menuInflater.inflate(R.menu.menu_genre_options, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_add_genre_to_queue -> {
+                    val service = MusicPlaybackService.getInstance()
+                    if (service != null) {
+                        service.addToQueue(tracks)
+                        Toast.makeText(
+                            this,
+                            "${tracks.size} canciones de \"$genre\" añadidas a la cola",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "El servicio de reproducción no está disponible",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    true
+                }
+                R.id.action_play_genre -> {
+                    if (tracks.isNotEmpty()) {
+                        MusicPlaybackService.getInstance()?.setPlaylist(tracks, 0)
+                        startActivity(Intent(this, NowPlayingActivity::class.java))
+                    }
                     true
                 }
                 else -> false

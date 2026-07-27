@@ -35,7 +35,9 @@ drawable ic_shuffle
 drawable ic_shuffle_on
 drawable ic_timer
 drawable ic_timer_active
+id action_add_genre_to_queue
 id action_add_to_playlist
+id action_play_genre
 id action_rescan
 id action_search
 id action_select_folder
@@ -44,6 +46,7 @@ id action_view_genres
 id action_view_playlists
 id buttonBack
 id buttonClear
+id buttonGenreMore
 id buttonMiniPlayPause
 id buttonMore
 id buttonNext
@@ -112,6 +115,7 @@ layout item_playlist
 layout item_track
 layout music_widget
 menu main_menu
+menu menu_genre_options
 menu menu_track_options
 mipmap ic_launcher
 mipmap ic_launcher_round

@@ -3333,6 +3333,7 @@ int id action0 0x7f0a0030
 int id actionDown 0x7f0a0031
 int id actionDownUp 0x7f0a0032
 int id actionUp 0x7f0a0033
+int id action_add_genre_to_queue 0x7f0a0274
 int id action_add_to_playlist 0x7f0a0034
 int id action_bar 0x7f0a0035
 int id action_bar_activity_content 0x7f0a0036
@@ -3350,6 +3351,7 @@ int id action_menu_presenter 0x7f0a0041
 int id action_mode_bar 0x7f0a0042
 int id action_mode_bar_stub 0x7f0a0043
 int id action_mode_close_button 0x7f0a0044
+int id action_play_genre 0x7f0a0275
 int id action_rescan 0x7f0a0045
 int id action_search 0x7f0a0046
 int id action_select_folder 0x7f0a0047
@@ -3389,6 +3391,7 @@ int id bounceEnd 0x7f0a0068
 int id bounceStart 0x7f0a0069
 int id buttonBack 0x7f0a006a
 int id buttonClear 0x7f0a006b
+int id buttonGenreMore 0x7f0a0276
 int id buttonMiniPlayPause 0x7f0a006c
 int id buttonMore 0x7f0a006d
 int id buttonNext 0x7f0a006e
@@ -4136,6 +4139,7 @@ int layout select_dialog_multichoice_material 0x7f0d0087
 int layout select_dialog_singlechoice_material 0x7f0d0088
 int layout support_simple_spinner_dropdown_item 0x7f0d0089
 int menu main_menu 0x7f0f0000
+int menu menu_genre_options 0x7f0f0002
 int menu menu_track_options 0x7f0f0001
 int mipmap ic_launcher 0x7f100000
 int mipmap ic_launcher_round 0x7f100001

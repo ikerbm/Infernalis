@@ -353,6 +353,31 @@ class MusicPlaybackService : MediaSessionService() {
     fun getCurrentQueue(): List<Track> = trackList
 
     /**
+     * Add a list of tracks to the end of the current queue without interrupting playback.
+     * If there is no active queue, starts playback from the first track of the list.
+     */
+    fun addToQueue(tracks: List<Track>) {
+        if (tracks.isEmpty()) return
+
+        val player = exoPlayer ?: return
+
+        if (trackList.isEmpty()) {
+            // No current queue — start playback normally
+            setPlaylist(tracks, 0)
+            return
+        }
+
+        // Append tracks to internal list
+        val newTrackList = trackList.toMutableList().apply { addAll(tracks) }
+        trackList = newTrackList
+        originalTrackList = newTrackList
+
+        // Append MediaItems to ExoPlayer without interrupting current playback
+        val mediaItems = tracks.map { MediaItem.fromUri(it.uri) }
+        player.addMediaItems(mediaItems)
+    }
+
+    /**
      * Cycle repeat mode: OFF -> ALL -> ONE -> OFF
      */
     fun cycleRepeatMode() {

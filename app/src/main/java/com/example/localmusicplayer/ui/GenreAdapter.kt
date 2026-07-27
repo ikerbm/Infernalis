@@ -18,7 +18,8 @@ import java.io.File
  */
 class GenreAdapter(
     private val onTrackClick: (Track, List<Track>) -> Unit,
-    private val onMoreClick: ((Track, View) -> Unit)? = null
+    private val onMoreClick: ((Track, View) -> Unit)? = null,
+    private val onGenreMoreClick: ((genre: String, tracks: List<Track>, anchorView: View) -> Unit)? = null
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -127,6 +128,15 @@ class GenreAdapter(
                     notifyDataSetChanged()
                 }
             }
+
+            binding.buttonGenreMore.setOnClickListener { view ->
+                val pos = bindingAdapterPosition
+                if (pos != RecyclerView.NO_POSITION) {
+                    val header = items[pos] as? ListItem.Header ?: return@setOnClickListener
+                    val tracks = genreMap[header.genre] ?: emptyList()
+                    onGenreMoreClick?.invoke(header.genre, tracks, view)
+                }
+            }
         }
 
         fun bind(header: ListItem.Header) {
@@ -134,6 +144,9 @@ class GenreAdapter(
             binding.textTrackCount.text = "${header.trackCount} canciones"
             // Rotate arrow based on expanded state
             binding.imageExpand.rotation = if (header.isExpanded) 180f else 0f
+            // Show/hide the more button based on whether a callback is provided
+            binding.buttonGenreMore.visibility =
+                if (onGenreMoreClick != null) View.VISIBLE else View.GONE
         }
     }
 

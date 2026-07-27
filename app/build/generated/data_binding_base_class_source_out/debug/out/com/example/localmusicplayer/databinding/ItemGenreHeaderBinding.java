@@ -4,6 +4,7 @@ package com.example.localmusicplayer.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +22,9 @@ public final class ItemGenreHeaderBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageButton buttonGenreMore;
+
+  @NonNull
   public final ImageView imageExpand;
 
   @NonNull
@@ -32,10 +36,12 @@ public final class ItemGenreHeaderBinding implements ViewBinding {
   @NonNull
   public final TextView textTrackCount;
 
-  private ItemGenreHeaderBinding(@NonNull LinearLayout rootView, @NonNull ImageView imageExpand,
+  private ItemGenreHeaderBinding(@NonNull LinearLayout rootView,
+      @NonNull ImageButton buttonGenreMore, @NonNull ImageView imageExpand,
       @NonNull ImageView imageGenre, @NonNull TextView textGenreName,
       @NonNull TextView textTrackCount) {
     this.rootView = rootView;
+    this.buttonGenreMore = buttonGenreMore;
     this.imageExpand = imageExpand;
     this.imageGenre = imageGenre;
     this.textGenreName = textGenreName;
@@ -69,6 +75,12 @@ public final class ItemGenreHeaderBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonGenreMore;
+      ImageButton buttonGenreMore = ViewBindings.findChildViewById(rootView, id);
+      if (buttonGenreMore == null) {
+        break missingId;
+      }
+
       id = R.id.imageExpand;
       ImageView imageExpand = ViewBindings.findChildViewById(rootView, id);
       if (imageExpand == null) {
@@ -93,8 +105,8 @@ public final class ItemGenreHeaderBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemGenreHeaderBinding((LinearLayout) rootView, imageExpand, imageGenre,
-          textGenreName, textTrackCount);
+      return new ItemGenreHeaderBinding((LinearLayout) rootView, buttonGenreMore, imageExpand,
+          imageGenre, textGenreName, textTrackCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
