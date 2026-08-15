@@ -8,6 +8,10 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\bg_widget_dark.xml"
     },
     {
+        "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\menu_menu_genre_options.xml.flat",
+        "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\menu\\menu_genre_options.xml"
+    },
+    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\drawable_ic_queue.xml.flat",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\ic_queue.xml"
     },
@@ -30,10 +34,6 @@
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\layout_music_widget.xml.flat",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\music_widget.xml"
-    },
-    {
-        "merged": "com.example.localmusicplayer.app-debug-48:/layout_item_genre_header.xml.flat",
-        "source": "com.example.localmusicplayer.app-main-50:/layout/item_genre_header.xml"
     },
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\menu_menu_track_options.xml.flat",
@@ -100,6 +100,10 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\ic_music_placeholder.xml"
     },
     {
+        "merged": "com.example.localmusicplayer.app-debug-48:/layout_activity_now_playing.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_now_playing.xml"
+    },
+    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\layout_activity_queue.xml.flat",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_queue.xml"
     },
@@ -150,10 +154,6 @@
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\layout_activity_playlist_detail.xml.flat",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_playlist_detail.xml"
-    },
-    {
-        "merged": "com.example.localmusicplayer.app-debug-48:/menu_menu_genre_options.xml.flat",
-        "source": "com.example.localmusicplayer.app-main-50:/menu/menu_genre_options.xml"
     },
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\layout_activity_playlists.xml.flat",

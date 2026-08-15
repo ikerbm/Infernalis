@@ -209,7 +209,7 @@
     <!-- Album Art -->
     <ImageView
         android:id="@+id/imageAlbumArt"
-        android:layout_width="280dp"
+        android:layout_width="340dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -217,10 +217,10 @@
         android:contentDescription="Album Art"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_music_placeholder"
-        android:maxHeight="300dp"
+        android:maxHeight="360dp"
         android:adjustViewBounds="true"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintHeight_max="300dp"
+        app:layout_constraintHeight_max="360dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonBack"
@@ -230,14 +230,14 @@
     <!-- Lyrics View (Hidden by default, same position as album art) -->
     <ScrollView
         android:id="@+id/scrollLyrics"
-        android:layout_width="280dp"
+        android:layout_width="340dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_rounded_gray"
         android:padding="16dp"
         android:visibility="gone"
-        app:layout_constraintHeight_max="300dp"
+        app:layout_constraintHeight_max="360dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonBack"
