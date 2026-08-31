@@ -3352,6 +3352,7 @@ int id action_mode_bar 0x7f0a0043
 int id action_mode_bar_stub 0x7f0a0044
 int id action_mode_close_button 0x7f0a0045
 int id action_play_genre 0x7f0a0046
+int id action_play_next 0x7f0a0277
 int id action_rescan 0x7f0a0047
 int id action_search 0x7f0a0048
 int id action_select_folder 0x7f0a0049
@@ -4387,6 +4388,7 @@ int string path_password_eye_mask_strike_through 0x7f1200ed
 int string path_password_eye_mask_visible 0x7f1200ee
 int string path_password_strike_through 0x7f1200ef
 int string permission_required 0x7f1200f0
+int string play_next 0x7f12011a
 int string play_pause 0x7f1200f1
 int string playlist_created 0x7f1200f2
 int string playlist_deleted 0x7f1200f3
@@ -4424,6 +4426,7 @@ int string sleep_timer_started 0x7f120112
 int string sleep_timer_title 0x7f120113
 int string status_bar_notification_info_overflow 0x7f120114
 int string track_added_to_playlist 0x7f120115
+int string track_added_to_queue 0x7f12011b
 int string track_already_in_playlist 0x7f120116
 int string tracks_count 0x7f120117
 int string view_by_genre 0x7f120118

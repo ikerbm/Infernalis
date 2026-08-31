@@ -3353,6 +3353,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_play_genre
+id action_play_next
 id action_rescan
 id action_search
 id action_select_folder
@@ -4388,6 +4389,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string permission_required
+string play_next
 string play_pause
 string playlist_created
 string playlist_deleted
@@ -4425,6 +4427,7 @@ string sleep_timer_started
 string sleep_timer_title
 string status_bar_notification_info_overflow
 string track_added_to_playlist
+string track_added_to_queue
 string track_already_in_playlist
 string tracks_count
 string view_by_genre

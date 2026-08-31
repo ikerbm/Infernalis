@@ -38,6 +38,7 @@ drawable ic_timer_active
 id action_add_genre_to_queue
 id action_add_to_playlist
 id action_play_genre
+id action_play_next
 id action_rescan
 id action_search
 id action_select_folder
@@ -140,6 +141,7 @@ string no_playlists
 string no_tracks_found
 string no_tracks_in_playlist
 string permission_required
+string play_next
 string play_pause
 string playlist_created
 string playlist_deleted
@@ -170,6 +172,7 @@ string sleep_timer_set
 string sleep_timer_started
 string sleep_timer_title
 string track_added_to_playlist
+string track_added_to_queue
 string track_already_in_playlist
 string tracks_count
 string view_by_genre

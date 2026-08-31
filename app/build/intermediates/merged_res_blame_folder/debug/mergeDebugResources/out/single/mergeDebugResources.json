@@ -12,6 +12,10 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\menu\\menu_genre_options.xml"
     },
     {
+        "merged": "com.example.localmusicplayer.app-debug-48:/menu_menu_track_options.xml.flat",
+        "source": "com.example.localmusicplayer.app-main-50:/menu/menu_track_options.xml"
+    },
+    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\drawable_ic_queue.xml.flat",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\ic_queue.xml"
     },
@@ -100,10 +104,6 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\ic_music_placeholder.xml"
     },
     {
-        "merged": "com.example.localmusicplayer.app-debug-48:/layout_activity_now_playing.xml.flat",
-        "source": "com.example.localmusicplayer.app-main-50:/layout/activity_now_playing.xml"
-    },
-    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\layout_activity_queue.xml.flat",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_queue.xml"
     },
@@ -132,12 +132,12 @@
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\ic_shuffle.xml"
     },
     {
-        "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\drawable_ic_more_vert.xml.flat",
-        "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\ic_more_vert.xml"
-    },
-    {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\layout_activity_now_playing.xml.flat",
         "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\layout\\activity_now_playing.xml"
+    },
+    {
+        "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\drawable_ic_more_vert.xml.flat",
+        "source": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-main-50:\\drawable\\ic_more_vert.xml"
     },
     {
         "merged": "C:\\Users\\iker1\\.gradle\\daemon\\8.13\\com.example.localmusicplayer.app-debug-48:\\drawable_ic_back.xml.flat",

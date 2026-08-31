@@ -378,6 +378,32 @@ class MusicPlaybackService : MediaSessionService() {
     }
 
     /**
+     * Insert a track right after the currently playing one so it plays next.
+     * If there is no active queue, starts playback with the given track.
+     */
+    fun playNext(track: Track) {
+        val player = exoPlayer ?: return
+
+        if (trackList.isEmpty()) {
+            // No current queue — start playback with this track
+            setPlaylist(listOf(track), 0)
+            return
+        }
+
+        val currentIndex = player.currentMediaItemIndex
+        val insertIndex = currentIndex + 1
+
+        // Insert into internal track list
+        val newTrackList = trackList.toMutableList().apply { add(insertIndex, track) }
+        trackList = newTrackList
+        originalTrackList = newTrackList
+
+        // Insert MediaItem into ExoPlayer at the correct position
+        val mediaItem = MediaItem.fromUri(track.uri)
+        player.addMediaItem(insertIndex, mediaItem)
+    }
+
+    /**
      * Cycle repeat mode: OFF -> ALL -> ONE -> OFF
      */
     fun cycleRepeatMode() {

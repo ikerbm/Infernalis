@@ -230,6 +230,16 @@ class MainActivity : AppCompatActivity() {
         popup.menuInflater.inflate(R.menu.menu_track_options, popup.menu)
         popup.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
+                R.id.action_play_next -> {
+                    val service = MusicPlaybackService.getInstance()
+                    if (service != null) {
+                        service.playNext(track)
+                        Toast.makeText(this, R.string.track_added_to_queue, Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "No hay reproducción activa", Toast.LENGTH_SHORT).show()
+                    }
+                    true
+                }
                 R.id.action_add_to_playlist -> {
                     AddToPlaylistDialog.newInstance(track.path, track.title)
                         .show(supportFragmentManager, AddToPlaylistDialog.TAG)

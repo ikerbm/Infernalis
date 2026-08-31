@@ -94,6 +94,16 @@ class PlaylistDetailActivity : AppCompatActivity() {
         
         popup.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
+                R.id.action_play_next -> {
+                    val service = MusicPlaybackService.getInstance()
+                    if (service != null) {
+                        service.playNext(track)
+                        android.widget.Toast.makeText(this, R.string.track_added_to_queue, android.widget.Toast.LENGTH_SHORT).show()
+                    } else {
+                        android.widget.Toast.makeText(this, "No hay reproducción activa", android.widget.Toast.LENGTH_SHORT).show()
+                    }
+                    true
+                }
                 R.id.action_add_to_playlist -> {
                     AddToPlaylistDialog.newInstance(track.path, track.title)
                         .show(supportFragmentManager, AddToPlaylistDialog.TAG)
